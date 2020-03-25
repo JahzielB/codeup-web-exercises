@@ -1,1 +1,1 @@
-git
+Getting Git is legit.
