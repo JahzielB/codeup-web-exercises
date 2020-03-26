@@ -1,79 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>And More Forms Practice</title>
-</head>
-<body>
-    <form action="https://request-inspector.glitch.me/" method="post">
-        <p>What kind of property are you looking for?</p>
-        <div>
-            <input type="checkbox" id="apartment" name="apartment">
-            <label for="apartment">Apartment</label>
-        </div>
-        <div>
-            <input type="checkbox" id="condo" name="condo">
-            <label for="condo">Condo</label>
-        </div>
-        <div>
-            <input type="checkbox" id="house" name="house">
-            <label for="house">House</label>
-        </div>
-        <br>
-        <p>What kind of square footage are you looking for?</p>
-        <div>
-            <label for="sqft_min">Minimum:</label>
-            <select name="sqft_min" id="sqft_min">
-                <option value="500">500</option>
-                <option value="750">750</option>
-                <option value="1000">1000</option>
-                <option value="1250">1250</option>
-                <option value="1500">1500</option>
-                <option value="1750">1750</option>
-                <option value="2000">2000</option>
-            </select>
-            <label for="sqft_max">Maximum:</label>
-            <select name="sqft_max" id="sqft_max">
-                <option value="750">750</option>
-                <option value="1000">1000</option>
-                <option value="1250">1250</option>
-                <option value="1500">1500</option>
-                <option value="1750">1750</option>
-                <option value="2000">2000</option>
-            </select>
-        </div>
-        <br>
-        <p>What's your price range?</p>
-        <div>
-            <label for="price_min">Minimum:</label>
-            <input type="text" id="price_min" name="price_min">
-            <label for="price_max">Maximum:</label>
-            <input type="text" id="price_max" name="price_max">
-        </div>
-        <br><br>
-        <div>
-            <label for="zipcode">What zipcode would you like to live in?</label>
-            <input type="text" id="zipcode" name="zipcode">
-        </div>
-        <br>
-        <p>How many bedrooms and bathrooms do you want?</p>
-        <div>
-            <label for="bedrooms">Bedrooms:</label>
-            <select name="bedrooms" id="bedrooms">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select>
-            <label for="bathrooms">Bathrooms:</label>
-            <select name="bathrooms" id="bathrooms">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-        </div>
-        <br>
-        <button type="submit">Search now</button>
-    </form>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>And More Forms Practice</title>
+    </head>
+    <body>
+        <main>
+            <form action="https://request-inspector.glitch.me/" method="post">
+                <p>What kind of property are you looking for?</p>
+                <div>
+                    <input type="checkbox" id="apartment" name="apartment">
+                    <label for="apartment">Apartment</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="condo" name="condo">
+                    <label for="condo">Condo</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="house" name="house">
+                    <label for="house">House</label>
+                </div>
+                <br>
+                <p>What kind of square footage are you looking for?</p>
+                <div>
+                    <label for="sqft_min">Minimum:</label>
+                    <select name="sqft_min" id="sqft_min">
+                        <option value="500">500</option>
+                        <option value="750">750</option>
+                        <option value="1000">1000</option>
+                        <option value="1250">1250</option>
+                        <option value="1500">1500</option>
+                        <option value="1750">1750</option>
+                        <option value="2000">2000</option>
+                    </select>
+                    <label for="sqft_max">Maximum:</label>
+                    <select name="sqft_max" id="sqft_max">
+                        <option value="750">750</option>
+                        <option value="1000">1000</option>
+                        <option value="1250">1250</option>
+                        <option value="1500">1500</option>
+                        <option value="1750">1750</option>
+                        <option value="2000">2000</option>
+                    </select>
+                </div>
+                <br>
+                <p>What's your price range?</p>
+                <div>
+                    <label for="price_min">Minimum:</label>
+                    <input type="text" id="price_min" name="price_min">
+                    <label for="price_max">Maximum:</label>
+                    <input type="text" id="price_max" name="price_max">
+                </div>
+                <br><br>
+                <div>
+                    <label for="zipcode">What zipcode would you like to live in?</label>
+                    <input type="text" id="zipcode" name="zipcode">
+                </div>
+                <br>
+                <p>How many bedrooms and bathrooms do you want?</p>
+                <div>
+                    <label for="bedrooms">Bedrooms:</label>
+                    <select name="bedrooms" id="bedrooms">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <label for="bathrooms">Bathrooms:</label>
+                    <select name="bathrooms" id="bathrooms">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <br>
+                <button type="submit">Search now</button>
+            </form>
+        </main>
+    </body>
 </html>

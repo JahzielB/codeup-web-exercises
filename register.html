@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>More Forms Practice</title>
-</head>
-<body>
-    <form action="https://request-inspector.glitch.me/" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" autofocus="autofocus" required><br>
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" required><br>
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required><br>
-        <label for="confirm_password">Confirm Password</label>
-        <input type="password" id="confirm_password" name="confirm_password" required><br>
-        <label for="newsletter">Sign me up for this newsletter</label>
-        <input type="checkbox" name="newsletter" value="newsletter_checked" id="newsletter" checked><br>
-        <button type="submit">Create new account!</button>
-    </form>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>More Forms Practice</title>
+    </head>
+    <body>
+        <main>
+        <form action="https://request-inspector.glitch.me/" method="post">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" autofocus="autofocus" required><br>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required><br>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required><br>
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" required><br>
+            </div>
+            <div>
+                <label for="newsletter">Sign me up for this newsletter</label>
+                <input type="checkbox" name="newsletter" value="newsletter_checked" id="newsletter" checked><br>
+            </div>
+            <button type="submit">Create new account!</button>
+            </form>
+        </main>
+    </body>
 </html>
