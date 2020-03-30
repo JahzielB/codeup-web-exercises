@@ -1,4 +1,42 @@
 .fancy-header  {
-    color: purple;
+    text-align: center;
+}
+
+.header {
     text-decoration: underline;
+}
+
+body {
+    background: orange;
+    background-image: url("../img/shy-guy.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+ul {
+    list-style-type: upper-roman;
+}
+
+body {
+    font-family: 'Sen', sans-serif;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+a:link {
+    color: red;
+}
+
+a:visited {
+    color: aqua;
+}
+
+a:hover {
+    color: burlywood;
+}
+
+a:active {
+    color: darkgoldenrod;
 }
