@@ -1,3 +1,14 @@
+:root {
+    --bg-info: #D0DEFC;
+    --text-info: #4B47A1;
+    --bg-success: #D6F2DC;
+    --text-success: #408555;
+    --bg-warning: #FDFBCE;
+    --text-warning: #8B7810;
+    --bg-error: #F4D5D8;
+    --text-error: #9C4154;
+}
+
 body, html {
     height: 100%;
     width: 100%;
@@ -7,37 +18,37 @@ body, html {
 }
 
 .message-info {
-    background: #D0DEFC;
+    background: var(--bg-info);
     padding: .8em;
     margin: .8em;
     border: 1px solid lightgrey;
-    color: #4B47A1;
+    color: var(--text-info);
     border-radius: 1em;
 }
 
 .message-success {
-    background: #D6F2DC;
+    background: var(--bg-success);
     padding: .8em;
     margin: .8em;
     border: 1px solid lightgrey;
-    color: #408555;
+    color: var(--text-success);
     border-radius: 1em;
 }
 
 .message-warning {
-    background: #FDFBCE;
+    background: var(--bg-warning);
     padding: .8em;
     margin: .8em;
     border: 1px solid lightgrey;
-    color: #8B7810;
+    color: var(--text-warning);
     border-radius: 1em;
 }
 
 .message-error {
-    background: #F4D5D8;
+    background: var(--bg-error);
     padding: .8em;
     margin: .8em;
     border: 1px solid lightgrey;
-    color: #9C4154;
+    color: var(--text-error);
     border-radius: 1em;
 }
