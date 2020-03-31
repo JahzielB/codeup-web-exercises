@@ -9,8 +9,9 @@
 body {
     background: orange;
     background-image: url("../img/shy-guy.png");
-    background-repeat: no-repeat;
-    background-size: auto;
+    background-repeat: repeat;
+    background-size: 100% auto;
+    background-attachment: fixed;
 }
 
 ul {
