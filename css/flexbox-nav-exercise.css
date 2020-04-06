@@ -20,6 +20,7 @@ nav li.nav-bar {
 nav li.nav-logo {
     font-family: 'Work Sans', sans-serif;
     font-size: 3em;
+    /*margin: auto;*/
     position: absolute;
     left: calc(50% - 1em);
 }
