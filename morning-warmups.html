@@ -63,7 +63,8 @@
 
             // Write a javascript function that returns true or false as to whether or not a number passed into the function is a whole number.
             function isWholeNum(num) {
-                return (Number.isInteger(num));
+                // return (Number.isInteger(num));
+                return num === Math.round(num);
             }
         </script>
     </body>
