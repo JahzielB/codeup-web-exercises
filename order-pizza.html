@@ -47,12 +47,14 @@
                     <div class="card-header text-white bg-primary ">Choose size and crust</div>
                     <div class="card mx-3 my-3">
                         <div class="card-header">Hand Tossed</div>
-                        <div class="card-body pt-0">
-                            <h5 class="card-title font-weight-normal border-bottom py-4 m-0">Garlic seasoned with a rich, buttery taste.</h5>
-                            <div class="form-check border-bottom py-3">
+                        <h5 class="card-title font-weight-normal pt-4 px-4 pb-3 m-0">Garlic seasoned with a rich, buttery taste.</h5>
+                        <div class="card-body border-bottom border-top pt-0 pb-0">
+                            <div class="form-check py-3">
                                 <input class="form-check-input" type="radio" name="pizza-size1" id="pizza-size1" value="option1">
                                 <label class="form-check-label" for="pizza-size1">Small (10")</label>
                             </div>
+                        </div>
+                        <div class="card-body pt-0">
                             <div class="form-check pt-3">
                                 <input class="form-check-input" type="radio" name="pizza-size2" id="pizza-size2" value="option2">
                                 <label class="form-check-label" for="pizza-size2">Medium (12")</label>
@@ -61,12 +63,14 @@
                     </div>
                     <div class="card mx-3 my-3">
                         <div class="card-header">Crispy Thin</div>
-                        <div class="card-body pt-0">
-                            <h5 class="card-title font-weight-normal border-bottom py-4 m-0">Thin enough for optimum crispy to crunchy ratio.</h5>
-                            <div class="form-check border-bottom py-3">
+                        <h5 class="card-title font-weight-normal pt-4 px-4 pb-3 m-0">Thin enough for optimum crispy to crunchy ratio.</h5>
+                        <div class="card-body border-bottom border-top pt-0 pb-0">
+                            <div class="form-check py-3">
                                 <input class="form-check-input" type="radio" name="pizza-size1" id="pizza-size1" value="option1">
                                 <label class="form-check-label " for="pizza-size1">Medium (12")</label>
                             </div>
+                        </div>
+                        <div class="card-body pt-0">
                             <div class="form-check pt-3">
                                 <input class="form-check-input" type="radio" name="pizza-size2" id="pizza-size2" value="option2">
                                 <label class="form-check-label" for="pizza-size2">Large (14")</label>
@@ -74,7 +78,7 @@
                         </div>
                     </div>
                     <div class="card-footer d-flex flex-row justify-content-end">
-                        <button type="button" class="btn btn-primary btn-lg">Next Step<i class="fas fa-chevron-right pl-2"></i></button>
+                        <button type="button" class="btn btn-primary btn-lg">Next Step<i class="fas fa-angle-right pl-2"></i></button>
                     </div>
                 </div>
                 <div class="tab-pane fade card" id="cheese" role="tabpanel" aria-labelledby="cheese-tab">
@@ -129,11 +133,74 @@
                         </div>
                     </div>
                     <div class="card-footer d-flex flex-row justify-content-end">
-                        <button type="button" class="btn btn-primary btn-lg">Next Step<i class="fas fa-chevron-right pl-2"></i></button>
+                        <div class="btn-group" role="group" aria-label="cheeseButtonGroup">
+                            <button type="button" class="btn btn-primary btn-lg"><i class="fas fa-angle-left pr-2"></i>Previous Step</button>
+                            <button type="button" class="btn btn-primary btn-lg">Next Step<i class="fas fa-angle-right pl-2"></i></button>
+                        </div>
                     </div>
                 </div>
                 <div class="tab-pane fade card" id="toppings" role="tabpanel" aria-labelledby="toppings-tab">
-
+                    <div class="card-header text-white bg-primary ">Choose Toppings</div>
+                    <div class="card mx-3 my-3">
+                        <div class="card-header">Choose Meats</div>
+                        <div class="card-body border-bottom py-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="check-meats-1">
+                                <label class="form-check-label" for="check-meats-1">Beef</label>
+                            </div>
+                        </div>
+                        <div class="card-body border-bottom py-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="check-meats-2">
+                                <label class="form-check-label" for="check-meats-2">Ham</label>
+                            </div>
+                        </div>
+                        <div class="card-body border-bottom py-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="check-meats-3">
+                                <label class="form-check-label" for="check-meats-3">Philly Steak</label>
+                            </div>
+                        </div>
+                        <div class="card-body border-bottom py-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="check-meats-4">
+                                <label class="form-check-label" for="check-meats-4">Bacon</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-header text-white bg-primary ">Choose Toppings</div>
+                    <div class="card mx-3 my-3">
+                        <div class="card-header">Choose Non-Meats</div>
+                        <div class="card-body border-bottom py-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="check-nonmeats-1">
+                                <label class="form-check-label" for="check-nonmeats-1">Green Peppers</label>
+                            </div>
+                        </div>
+                        <div class="card-body border-bottom py-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="check-nonmeats-2">
+                                <label class="form-check-label" for="check-nonmeats-2">Mushrooms</label>
+                            </div>
+                        </div>
+                        <div class="card-body border-bottom py-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="check-nonmeats-3">
+                                <label class="form-check-label" for="check-nonmeats-3">Onions</label>
+                            </div>
+                        </div>
+                        <div class="card-body border-bottom py-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="check-nonmeats-4">
+                                <label class="form-check-label" for="check-nonmeats-4">Jalapeño Peppers</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex flex-row justify-content-end">
+                        <div class="btn-group" role="group" aria-label="cheeseButtonGroup">
+                            <button type="button" class="btn btn-primary btn-lg">Checkout<i class="fas fa-shopping-cart pl-2"></i></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
