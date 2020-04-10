@@ -1,0 +1,10 @@
+.pizza-heading {
+    background-color: white;
+    opacity: .5;
+}
+
+.pizza-tron {
+    background-image: url("../img/pizza.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
