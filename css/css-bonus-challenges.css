@@ -1,0 +1,32 @@
+/*font-family: 'Roboto', sans-serif;*/
+body {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+}
+.top-nav {
+    background: #222222;
+    grid-area: 1 / 1 / 2 / 7;
+}
+.side-nav {
+    background: #F0F0F0;
+    grid-area: 2 / 1 / 11 / 2;
+}
+.main-news {
+    background: blue;
+    grid-area: 2 / 2 / 10 / 7;
+}
+.ads {
+    background: green;
+    grid-area: 2 / 5 / 10 / 7;
+}
+.page-numbers {
+    background: orange;
+    grid-area: 9 / 3 / 10 / 6;
+}
+.footer {
+    background: purple;
+    grid-area: 10 / 2 / 11 / 7;
+}

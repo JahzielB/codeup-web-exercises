@@ -1,0 +1,12 @@
+/*font-family: 'Anton', sans-serif;*/
+/*font-family: 'Abel', sans-serif;*/
+body {
+    background: #F0F0F0;
+}
+.img-fluid {
+    width: 105px;
+    height: 105px;
+    position: absolute;
+    float: left;
+    display: inline;
+}
