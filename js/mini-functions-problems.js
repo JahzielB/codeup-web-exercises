@@ -1,3 +1,5 @@
+(function(){
+
 "use strict";
 // ===== MINI PROBLEMS
 // Write a function, returnFive, that returns the number five. No inputs should be defined.
@@ -7,11 +9,7 @@ function returnFive() {
 
 // Write a function, isFive, that takes in an input and returns the boolean value true if the passed argument is the number 5 or the string "5". Return false otherwise.
 function isFive(num) {
-    if (num == 5) {
-        return true;
-    } else {
-        return false;
-    }
+    return num == 5;
 }
 
 // Write a function, isShortWord, that takes in a string and returns the boolean value true if the passed argument is shorter than 5 characters. Return false otherwise.
@@ -29,5 +27,7 @@ function isSameLength(str1, str2) {
 // example output: "cod"
 
 function getSmallerSegment(str1, num1) {
-    return str1.substring(0, num1).toLowerCase()
+    return str1.substring(0, num1).toLowerCase();
 }
+
+})();
