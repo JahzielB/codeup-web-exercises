@@ -77,7 +77,7 @@ console.log(isTwo(random), random);
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
-function calculateTip(tip, total) {
+function calculateTip(total, tip) {
     var tipPercent = tip / 100;
     return (tipPercent * total).toFixed(2);
 }
@@ -89,7 +89,7 @@ function calculateTip(tip, total) {
  * then display the dollar amount they should tip
  */
 
-alert("Here's what you should tip: $" + calculateTip(prompt("What percentage would you like to tip?"),prompt("What is your bill total?")));
+alert("Here's what you should tip: $" + calculateTip(prompt("What is your bill total?"),prompt("What percentage would you like to tip?")));
 
 /**
  * TODO:
@@ -110,6 +110,6 @@ function applyDiscount(price, discount) {
     return price - (price * discount);
 }
 
-    console.log(applyDiscount(45.99, 0.12));
+console.log(applyDiscount(45.99, 0.12));
 
 })();
