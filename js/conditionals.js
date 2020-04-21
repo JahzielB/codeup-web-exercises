@@ -154,14 +154,6 @@ var luckyNumber = Math.floor(Math.random() * 6);
  * HINT: The way we prompt for a value could be improved
  */
 
-function isNumber(num) {
-    if (typeof num == "number") {
-        return true;
-    } else {
-        return false;
-    }
-}
-
 function numPositiveOrNegative(num) {
     if (num > 0) {
         return "The number you input is positive";
@@ -186,8 +178,7 @@ function numEvenOrOddPlusOneHundredNegativeOrPositive() {
     var userInputNumConfirm = confirm("Would you like to input a number?")
     if (userInputNumConfirm === true) {
         var userInputNumPrompt = prompt("Please input a number:")
-        console.log(isNumber(userInputNumPrompt));
-        if (!isNaN(Number(userInputNumPrompt))) {
+        if (!isNaN(userInputNumPrompt)) {
             alert(numPositiveOrNegative(userInputNumPrompt));
             alert(numPlusOneHundred(userInputNumPrompt));
             alert(numEvenOrOdd(userInputNumPrompt));
@@ -199,4 +190,4 @@ function numEvenOrOddPlusOneHundredNegativeOrPositive() {
     }
 }
 
-// numEvenOrOddPlusOneHundredNegativeOrPositive();
+numEvenOrOddPlusOneHundredNegativeOrPositive();
