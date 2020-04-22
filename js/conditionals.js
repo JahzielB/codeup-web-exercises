@@ -101,20 +101,27 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  */
 
 function calculateTotal(luckyNumber, totalAmount) {
+    alert("Your price before the discount is $" + totalAmount);
     if (luckyNumber === 0) {
-        return "Your total cost is $" + totalAmount;
+        alert("Your lucky number is 0.")
+        return "You will not receive a discount and your bill is $" + totalAmount;
     } else if (luckyNumber === 1) {
-        return "Your total cost is $" + (totalAmount - (totalAmount * 0.10));
+        alert("Your lucky number is 1.")
+        return "Your cost after the discount is $" + (totalAmount - (totalAmount * 0.10));
     } else if (luckyNumber === 2) {
-        return "Your total cost is $" + (totalAmount - (totalAmount * 0.25));
+        alert("Your lucky number is 2.")
+        return "Your cost after the discount is $" + (totalAmount - (totalAmount * 0.25));
     } else if (luckyNumber === 3) {
-        return "Your total cost is $" + (totalAmount - (totalAmount * 0.35));
+        alert("Your lucky number is 3.")
+        return "Your cost after the discount is $" + (totalAmount - (totalAmount * 0.35));
     } else if (luckyNumber === 4) {
-        return "Your total cost is $" + (totalAmount - (totalAmount * 0.50));
+        alert("Your lucky number is 4.")
+        return "Your cost after the discount is $" + (totalAmount - (totalAmount * 0.50));
     } else if (luckyNumber === 5) {
-        return "Your total cost is $0" + (totalAmount - totalAmount);
+        alert("Your lucky number is 5.")
+        return "Your cost after the discount is $0" + (totalAmount - totalAmount);
     } else {
-        return "You didn't input a number between 1 and 5";
+        return "Your lucky number is not between 1 and 5";
     }
 }
 
@@ -133,9 +140,9 @@ function calculateTotal(luckyNumber, totalAmount) {
 // Generate a random number between 0 and 6
 var luckyNumber = Math.floor(Math.random() * 6);
 
-// console.log(luckyNumber);
-// var billTotal = prompt("Please input your bill total:")
-// alert(calculateTotal(luckyNumber, billTotal))
+console.log(luckyNumber);
+var billTotal = parseInt(prompt("Please input your bill total:"))
+alert(calculateTotal(luckyNumber, billTotal))
 
 /**
  * TODO:
@@ -190,4 +197,4 @@ function numEvenOrOddPlusOneHundredNegativeOrPositive() {
     }
 }
 
-numEvenOrOddPlusOneHundredNegativeOrPositive();
+// numEvenOrOddPlusOneHundredNegativeOrPositive();
