@@ -1,13 +1,19 @@
 "use strict";
 
-var userOddNum = prompt("Enter an odd number between 1 and 50")
-
-while (userOddNum % 2 == 0 || userOddNum > 50) {
-    var newUserNum = prompt("You did not enter an odd number between 1 and 50. Please try again.")
-    if (newUserNum % 2 == 0 || newUserNum > 50) {
-        continue;
-
-    } else {
+var userNumInput;
+while (true) {
+    userNumInput = prompt("Please input an odd number between 1 and 50.")
+    if (userNumInput % 2 && userNumInput < 51 && userNumInput >= 1) {
         break;
+    }
+}
+for (var i = 1; i < 51; i++) {
+    if (i % 2 == 0) {
+        continue;
+    }
+    if (userNumInput == i) {
+        console.log("Yikes! Skipping number: " + i);
+    } else {
+        console.log("Here's an odd number: " + i);
     }
 }
