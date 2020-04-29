@@ -7,9 +7,10 @@
 // }
 
 var allCones = Math.floor(Math.random() * 50) + 50;
-console.log("Random cone number is " + allCones)
+// console.log("Random cone number is " + allCones)
 do {
     var conesBought = Math.floor(Math.random() * 5) + 1;
+    console.log(allCones + " left for sale")
     if (conesBought < allCones) {
         console.log(conesBought + " cones sold...");
     } else if (conesBought > allCones) {
