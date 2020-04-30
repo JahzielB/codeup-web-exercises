@@ -28,11 +28,15 @@
     var brPlanetsString = planetsArray.join('<br>')
     console.log(brPlanetsString);
 
-    var ulPlanetsString = '<ul>';
-    planetsArray.forEach(function (planet) {
-        ulPlanetsString += '<li>' + planet + '</li>';
-    });
-    ulPlanetsString += '</ul>';
-    console.log(ulPlanetsString);
+    function makeArrayIntoStrList(arr) {
+        var ulPlanetsString = '<ul>';
+        arr.forEach(function (planet) {
+            ulPlanetsString += '<li>' + planet + '</li>';
+        });
+        ulPlanetsString += '</ul>';
+        return ulPlanetsString;
+    }
+
+    console.log(makeArrayIntoStrList(planetsArray));;
 
 })();
