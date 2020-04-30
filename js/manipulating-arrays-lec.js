@@ -116,6 +116,7 @@ console.log(submarineArray);
 console.log(submarine);
 
 // TO DO: Now, join the array elements into a string. Each word should be in its own separate line.
-var newSubmarine = submarineArray.join(' ');
+var newSubmarine = submarineArray.join('\n');
+// var newSubmarine = submarineArray.join('<br>');
 // Log your results.
 console.log(newSubmarine);
