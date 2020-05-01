@@ -12,6 +12,10 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
+    let person = {
+        firstName: "Jahziel",
+        lastName: "Baez"
+    }
 
     /**
      * TODO:
@@ -22,6 +26,11 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+
+    person.sayHello = function () {
+        return "Hello from " + person.firstName + " " + person.lastName;
+    }
+    // console.log(person.sayHello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -37,11 +46,19 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    // shoppers.forEach(function (person) {
+    //     if (person.amount >= 200) {
+    //         console.log(person.name + "'s price before the discount is " + person.amount + ". " + "The discount is $" + (person.amount * 0.12).toFixed(2) + " and the price after discount is $" + (person.amount - (person.amount * 0.12)).toFixed(2));
+    //     } else if (person.amount < 200) {
+    //         console.log(person.name + "'s price before the discount is " + person.amount + ". " + "The discount is $" + "$0." + " The total price is $" + person.amount);
+    //     }
+    // });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -55,6 +72,44 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    let books = [
+        {
+            title: "The Shining",
+            author: {
+                firstName: "Stephen",
+                lastName: "King"
+            }
+        },
+        {
+            title: "The Lord of the Rings",
+            author: {
+                firstName: "J.R.R.",
+                lastName: "Tolkien"
+            }
+        },
+        {
+            title: "The Alchemist",
+            author: {
+                firstName: "Paulo",
+                lastName: "Coelho"
+            }
+        },
+        {
+            title: "Harry Potter and the Philosopher's Stone",
+            author: {
+                firstName: "J.K.",
+                lastName: "Rowling"
+            }
+        },
+        {
+            title: "The Catcher in the Rye",
+            author: {
+                firstName: "J.D.",
+                lastName: "Salinger"
+            }
+        }
+    ]
 
     /**
      * TODO:
@@ -80,6 +135,21 @@
      *      ---
      *      ...
      */
+    // books.findIndex(x => x.title)
+
+    function myIndexOf(name) {
+        for (var i = 0; i < books.length; i++) {
+            if(books[i].hasOwnProperty('title')) {
+                if(books[i].title === name) {
+                    return ++i;
+                }
+            }
+        }
+    }
+
+    books.forEach(function (book) {
+        console.log("Book # " + myIndexOf(book.title) + "\n" + "Title: " + book.title + "\n" + "Author: " + book.author.firstName + " " + book.author.lastName);
+    })
 
     /**
      * Bonus:
