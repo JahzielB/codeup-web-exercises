@@ -137,10 +137,10 @@
      */
     // books.findIndex(x => x.title)
 
-    function myIndexOf(name) {
+    function indexPlueOne(title) {
         for (var i = 0; i < books.length; i++) {
             if(books[i].hasOwnProperty('title')) {
-                if(books[i].title === name) {
+                if(books[i].title === title) {
                     return ++i;
                 }
             }
@@ -148,7 +148,7 @@
     }
 
     books.forEach(function (book) {
-        console.log("Book # " + myIndexOf(book.title) + "\n" + "Title: " + book.title + "\n" + "Author: " + book.author.firstName + " " + book.author.lastName);
+        console.log("Book # " + indexPlueOne(book.title) + "\n" + "Title: " + book.title + "\n" + "Author: " + book.author.firstName + " " + book.author.lastName);
     })
 
     /**
