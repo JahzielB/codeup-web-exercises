@@ -9,7 +9,7 @@
 <body>
 
     <div id='map' style='width: 400px; height: 300px;'></div>
-    <script src="js/keys.js"></script>
+    <script src="../js/keys.js"></script>
     <script>
 
         mapboxgl.accessToken = mapboxKey;
@@ -20,12 +20,15 @@
             zoom: 12
         });
         setTimeout(function () {
-            var map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/mapbox/satellite-v9',
-                center: [-95.7129, 37.0902],
-                zoom: 2
-            });
+            // var map = new mapboxgl.Map({
+            //     container: 'map',
+            //     style: 'mapbox://styles/mapbox/satellite-v9',
+            //     center: [-95.7129, 37.0902],
+            //     zoom: 2
+            // });
+            map.setStyle("mapbox://styles/mapbox/satellite-v9");
+            map.setCenter([-95.7129, 37.0902]);
+            map.setZoom(2);
         }, 5000);
     </script>
 </body>
