@@ -148,11 +148,18 @@
                 return x.includes(x.length);
             }
 
-            console.log(takesArr([1]));
-            console.log(takesArr(['bob', 3, false]));
-            console.log(takesArr([{'a': 'hello'}, 10, true]));
-            console.log(takesArr([5, {'a': 'hello'}, 30, true, null]));
+            // Write a javascript function that takes in a number and returns the number raised to the power of four. If any argument is passed into the function that is not a number, return false.
+            function isNumeric(x) {
+                return !isNaN(parseFloat(x));
+            }
 
+            function powerOfFour(x) {
+                if (isNumeric(x) === true) {
+                    return Math.pow(x, 4)
+                } else {
+                    return false;
+                }
+            }
         </script>
     </body>
 </html>
