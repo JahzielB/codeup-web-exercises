@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Lecture</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+<div id="bonus"></div>
+<script src="../js/keys.js"></script>
+<script>
+
+    mapboxgl.accessToken = mapboxKey;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        center: [-77.0369, 38.8992],
+        zoom: 12
+    });
+
+    var popup = new mapboxgl.Popup()
+            .setHTML("Lincoln Memorial")
+
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-77.0502, 38.8893])
+        .setDraggable(true)
+        .setPopup(popup)
+        .addTo(map);
+    
+    // Makes the div with an id of bonus show an H1 with the lnglat of wherever the marker is dragged
+    marker.on('dragend', function() {
+        var bonus = document.getElementById("bonus");
+        var lngLat = marker.getLngLat();
+        bonus.innerHTML = "<h1>" + lngLat + "</h1>";
+        // Code below makes the H1 appear in the popup if the code above is commented out
+        // popup.setHTML("<h1>" + lngLat + "</h1>");
+    });
+
+</script>
+</body>
+</html>

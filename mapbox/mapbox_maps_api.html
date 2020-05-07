@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Exercise</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+    <div id='map' style='width: 400px; height: 300px;'></div>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+    <script src="../js/keys.js"></script>
+    <script src="../js/mapbox-geocode-utils.js"></script>
+    <script>
+        mapboxgl.accessToken = mapboxKey;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+        });
+
+        geocode("Salem, Massachusetts", mapboxKey).then(function(result) {
+            map.setCenter(result);
+            map.setZoom(5);
+        });
+
+        setTimeout(function (){
+           map.setZoom(8)
+        }, 2000);
+
+        setTimeout(function (){
+            map.setZoom(11)
+        }, 4000);
+
+        var favRestaurants = [
+            {
+                name: "<strong>Hung's Kitchen</strong>",
+                foodType: "Chinese Food",
+                lngLat: [-70.952319, 42.517797]
+            },
+            {
+                name: "<strong>Salem House of Pizza</strong>",
+                foodType: "Pizza and Wings",
+                lngLat: [-70.896620, 42.517811]
+            },
+            {
+                name: "<strong>Peter's Bella Pizza</strong>",
+                foodType: "<p>Pizza and Sandwiches</p>",
+                lngLat: [-70.909232, 42.512109]
+            }
+        ]
+
+        favRestaurants.forEach(function (food) {
+            var popup1 = new mapboxgl.Popup()
+                .setHTML(food.name + "\n" + food.foodType);
+            var marker1 = new mapboxgl.Marker()
+                .setLngLat(food.lngLat)
+                .setPopup(popup1)
+                .addTo(map);
+
+            // Not needed
+            // var popup2 = new mapboxgl.Popup()
+            //     .setHTML(food.name + "\n" + food.foodType);
+            // var marker2 = new mapboxgl.Marker()
+            //     .setLngLat(food.lngLat)
+            //     .setPopup(popup2)
+            //     .addTo(map);
+            //
+            // var popup3 = new mapboxgl.Popup()
+            //     .setHTML(food.name + "\n" + food.foodType);
+            // var marker3 = new mapboxgl.Marker()
+            //     .setLngLat(food.lngLat)
+            //     .setPopup(popup3)
+            //     .addTo(map);
+        });
+
+
+    </script>
+</body>
+</html>
