@@ -22,10 +22,11 @@
     </style>
 </head>
 <body>
-    <div id='map' style='width: 100%; height: 300px;'></div>
+    <div id='map' style='width: 100%; height: 350px;'></div>
     <div>
         <label>Select zoom level:</label>
         <select id="layer" name="layer" onchange="zoomChange(this)">
+            <option value="">Select One</option>
             <option value="5">5</option>
             <option value="15">15</option>
             <option value="20">20</option>
@@ -43,55 +44,45 @@
             style: 'mapbox://styles/mapbox/streets-v9',
         });
 
-        map.addControl(
-            new MapboxGeocoder({
-                accessToken: mapboxKey,
-                mapboxgl: mapboxgl
-            })
-        );
-
         geocode("Salem, Massachusetts", mapboxKey).then(function(result) {
             map.setCenter(result);
-            map.setZoom(5);
+            map.setZoom(12);
+            map.addControl(
+                new MapboxGeocoder({
+                    accessToken: mapboxKey,
+                    mapboxgl: mapboxgl
+                })
+            );
         });
-
-        setTimeout(function (){
-           map.setZoom(8)
-        }, 2000);
-
-        setTimeout(function (){
-            map.setZoom(11)
-        }, 4000);
 
         var favRestaurants = [
             {
                 name: "<strong>Hung's Kitchen</strong><br>",
                 foodType: "Chinese Food",
                 lngLat: [-70.952319, 42.517797],
-                dish: "<img src =\"../img/kitchen.jpg\">"
+                pic: "<img src =\"../img/kitchen.jpg\">"
             },
             {
                 name: "<strong>Salem House of Pizza</strong><br>",
                 foodType: "Pizza and Wings",
                 lngLat: [-70.896620, 42.517811],
-                dish: "<img src =\"../img/pizza.jpg\">"
+                pic: "<img src =\"../img/pizza.jpg\">"
             },
             {
                 name: "<strong>Peter's Bella Pizza</strong><br>",
                 foodType: "<p>Pizza and Sandwiches</p>",
                 lngLat: [-70.909232, 42.512109],
-                dish: "<img src =\"../img/bella.jpg\">"
+                pic: "<img src =\"../img/bella.jpg\">"
             }
         ]
 
         favRestaurants.forEach(function (food) {
-            var popup = new mapboxgl.Popup()
-                .setHTML(food.name + food.foodType + food.dish);
-
-            var marker = new mapboxgl.Marker()
-                .setLngLat(food.lngLat)
-                .setPopup(popup)
-                .addTo(map);
+                var popup = new mapboxgl.Popup()
+                    .setHTML(food.name + food.foodType + food.pic);
+                var marker = new mapboxgl.Marker()
+                    .setLngLat(food.lngLat)
+                    .setPopup(popup)
+                    .addTo(map);
 
             document.querySelector("#remove-markers").addEventListener("click", function () {
                 marker.remove();
