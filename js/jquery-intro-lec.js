@@ -60,7 +60,5 @@ $(document).ready(function() {
 $(document).ready(function() {
 
 	// INSERT JAVASCRIPT CODE HERE
-	var heading = $('headings')
-
 
 });
