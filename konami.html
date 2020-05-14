@@ -28,7 +28,7 @@
     <script>
         "use strict";
 
-
+        // plugin from here: https://github.com/blaiprat/jquery.animateSprite
         $("#bill").animateSprite({
             columns: 5,
             fps: 10,
@@ -56,7 +56,6 @@
 
         var thirtyLives = "<img src='img/contra-thirty-lives.png' alt='contra thirty lives/bombs/weapon'>";
         var konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
-        var correctKeys = 0;
         var userCode = [];
 
         function correctCode() {
@@ -65,16 +64,17 @@
         }
 
         $(document).keydown(function (event) {
-            if (konamiCode.indexOf(event.key) === -1 || event.key !== konamiCode[correctKeys]) {
-                correctKeys = 0;
+            if (konamiCode.includes(event.key)) {
+                userCode.push(event.key);
             }
-            correctKeys++
-            if (konamiCode.length === correctKeys) {
-                correctKeys = 0;
-                correctCode();
+            if (userCode.length === konamiCode.length) {
+                if (userCode.toString() === konamiCode.toString())
+                    correctCode();
+                if (userCode.toString() !== konamiCode.toString())
+                    alert("Try again!");
+                    userCode = [];
             }
-            console.log(correctKeys);
-        });
+        })
     </script>
 </body>
 </html>
