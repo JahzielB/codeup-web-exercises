@@ -31,15 +31,30 @@ $(document).ready(function() {
     // TODO TOGETHER:  Using an event listener and css method, increase the font-size of 'Sorting Hat' when clicked.
     //    How can font size be changed using .html()?
 
+    $("#main-heading").click(function () {
+        // $(this).css("font-size", "3em");
+        $(this).html("<h3>The Sorting Hat</h3>");
+    });
+
     // TODO TOGETHER: store the inner text of #main-heading in a variable
+
+    var mainHeadingText = $("#main-heading").text();
 
     // TODO: Using a css method, change the banner background-color to black
     //  Hint: make sure you use the right selector
 
+    $(".banner").css("background-color", "black");
+
     // TODO TOGETHER: When the 'Houses' button is clicked, add the class 'house' to anything with a class of 'house-name'
+
+    $("#highlight-houses").click(function (event) {
+        $(".house-name").addClass("house");
+    });
 
     // TODO: Comment out the code above. Add the class of 'house' to all the 'house-names'
     //  Write the event listener to remove the class instead
+
+
 
     // TODO TOGETHER: Refactor your addClass and removeClass methods to toggle the 'house' class instead
 
