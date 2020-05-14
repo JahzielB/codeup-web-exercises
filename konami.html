@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konami Code</title>
+    <style>
+        body {
+            background: url('img/contra-three-stage-one.png') no-repeat center center;
+            background-size: cover;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+        }
+        #bill {
+            height: 180px;
+            width: 139px;
+            background-image: url('img/contra-sprite-sheet.png');
+            grid-area: 4 / 1 / 5 / 2;
+        }
+    </style>
+</head>
+<body>
+    <img id="lives" src="img/contra-lives.png" alt="contra lives/bombs/weapon">
+    <div id="bill"></div>
+
+    <script src="js/jquery-2.2.4.js"></script>
+    <script src="js/animate-sprite.js"></script>
+    <script>
+        "use strict";
+
+
+        $("#bill").animateSprite({
+            columns: 5,
+            fps: 10,
+            loop: true,
+            autoplay: true,
+            animations: {
+                walkRight: [0, 1, 2, 3, 4],
+                walkLeft: [9, 8, 7, 6, 5]
+            },
+        })
+
+        // code that moves the background. found here: https://jsfiddle.net/3tQsc/
+        var scrollSpeed = 70;
+        var current = 0; // set the default position
+        var direction = 'h'; // set the direction
+
+        function bgscroll(){
+            current -= 8; // 1 pixel row at a time
+            // move the background with background-position css properties
+            $("body").css("backgroundPosition", (direction === 'h') ? current + "px 0" : "0 " + current + "px");
+        }
+
+        setInterval(bgscroll, scrollSpeed); // calls the scrolling function repeatedly
+        // end of code that moves the background.
+
+        var thirtyLives = "<img src='img/contra-thirty-lives.png' alt='contra thirty lives/bombs/weapon'>";
+        var konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
+        var correctKeys = 0;
+        var userCode = [];
+
+        function correctCode() {
+            $("#lives").remove();
+            $("#bill").before(thirtyLives);
+        }
+
+        $(document).keydown(function (event) {
+            if (konamiCode.indexOf(event.key) === -1 || event.key !== konamiCode[correctKeys]) {
+                correctKeys = 0;
+            }
+            correctKeys++
+            if (konamiCode.length === correctKeys) {
+                correctKeys = 0;
+                correctCode();
+            }
+            console.log(correctKeys);
+        });
+    </script>
+</body>
+</html>
