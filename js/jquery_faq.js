@@ -3,10 +3,12 @@
     $(document).ready(function () {
 
         $("dd").addClass("invisible");
+
         $("#secrets").click(function () {
             $("dd").toggleClass("invisible");
             $(this).text($(this).text() === 'Reveal Secrets' ? 'Hide Secrets' : 'Reveal Secrets')
         })
+
         $("dt").click(function () {
            $(this).toggleClass("highlight");
         });
