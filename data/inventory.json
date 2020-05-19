@@ -30,6 +30,23 @@
             "tool"
         ],
         "price": 10
-    }
+    }, {
+    "title": "Drill",
+    "quantity": 5,
+    "categories": [
+        "tool",
+        "powered"
+    ],
+    "price": 100
+}, {
+    "title": "Mower",
+    "quantity": 5,
+    "categories": [
+        "tool",
+        "gas",
+        "outdoor"
+    ],
+    "price": 200
+}
 ]
 
