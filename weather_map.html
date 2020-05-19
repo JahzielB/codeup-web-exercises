@@ -7,19 +7,32 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet'>
     <style>
         #map {
-            width: 100vw;
-            height: 50vh;
+            width: 1110px;
+            height: 500px;
         }
     </style>
 </head>
-<body>
+<body class="container">
+
+<!--    top nav?-->
     <div class="d-flex justify-content-between text-white bg-primary p-3">
         <p class="text-center mb-0">Weather App</p>
-        <p id="city" class="text-center mb-0">Current city: </p>
+        <p id="city" class="text-center mb-0">Current location: San Antonio, TX</p>
     </div>
 
+<!--    search form-->
+    <form class="form-inline pt-2">
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="locationInput"></label>
+            <input type="text" class="form-control" placeholder="Please enter a location" id="locationInput">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2" id="findButton">Find</button>
+    </form>
+
+<!--    five day forecast-->
     <div id="weather" class="d-flex"></div>
 
+<!--    map-->
     <div id="map"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -33,6 +46,7 @@
         $(document).ready(function () {
             "use strict";
 
+            // map starting centered on san antonio
             mapboxgl.accessToken = MAPBOX_KEY;
             var map = new mapboxgl.Map({
                 container: 'map',
@@ -41,16 +55,19 @@
                 zoom: 10
             });
 
+            // marker starting centered on san antonio
             var marker = new mapboxgl.Marker()
                 .setLngLat([-98.4936, 29.4241])
                 .addTo(map)
                 .setDraggable(true);
 
+            // function to convert unix timestamp to something readable
             function makeDate(date) {
                 var today = new Date(date * 1000);
                 return today.toLocaleDateString();
             }
 
+            // openweathermap api call and forecast starting in san antonio
             var weatherUrl = "https://api.openweathermap.org/data/2.5/onecall";
             var weatherOptions = {
                 lat: 29.4241,
@@ -60,18 +77,18 @@
                 units: "imperial"
             };
 
+            // function to create the 5 day forecast div above the map
             function forecast() {
                 $.get(weatherUrl, weatherOptions).done(function (data) {
+                    $(".card").remove();
                     for (var i = 0; i < data.daily.length - 3; i++) {
                         $("#weather").append("<div class='card m-2'>" + "<div class='card-header'>" + makeDate(data.daily[i].dt) + "</div>" + "<ul class='list-group list-group-flush'>" + "<li class='list-group-item'>" + data.daily[i].temp.day + "<img src=http://openweathermap.org/img/w/" + data.daily[i].weather[0].icon + ".png>" + "</li>" + "<li class='list-group-item'>" + "Description: " + data.daily[i].weather[0].description + "</li>" + "<li class='list-group-item'>" + "Humidity: " + data.daily[i].humidity + "</li>" + "<li class='list-group-item'>" + "Wind: " + data.daily[i].wind_speed + "</li>" + "<li class='list-group-item'>" + "Pressure: " + data.daily[i].pressure + "</li>" + "</ul>" + "</div>")
                     }
-                    console.log(data);
                 });
             }
 
-            forecast();
-
-            marker.on("dragend", function () {
+            // function to update the 5 day forecast div based on where the marker is when the function is invoked
+            function markerForecast() {
                 var lngLat = marker.getLngLat();
                 var longitude = lngLat.lng;
                 var latitude = lngLat.lat;
@@ -81,9 +98,26 @@
                     $("#city").empty()
                     $("#city").append("Current location: " + result)
                 });
-                $(".card").remove()
                 forecast();
+            }
+
+            // variable assigned to the form that takes in a location
+            var locationSearch = document.querySelector("#locationInput");
+
+            /* when the button with an id of findButton is clicked the function below does a geocode search on whatever the text input was and
+               centers the map/moves the marker/runs the markerForecast function to recreate the 5 day forecast div based on the marker location */
+            $("#findButton").click(function (e) {
+                e.preventDefault();
+                geocode(locationSearch.value, MAPBOX_KEY).then(function(result) {
+                    map.setCenter(result);
+                    map.setZoom(10);
+                    marker.setLngLat(result);
+                    markerForecast()
+                });
             });
+
+            forecast();
+            marker.on("dragend", markerForecast);
         })
     </script>
 </body>
