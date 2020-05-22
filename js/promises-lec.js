@@ -4,15 +4,24 @@
  *        USING FETCH WITH PROMISES
  ******************************************** */
 
-var pokemonPromise = fetch('https://pokeapi.co/api/v2/pokemon');
+const pokemonPromise = fetch('https://pokeapi.co/api/v2/pokemon');
 
 //TODO: console log the results of the above Promise. What is the result?
 
+// console.log(pokemonPromise);
+
 //TODO: add a method that runs if the Promise resolves successfully
+
+// pokemonPromise.then(response => console.log(response));
 
 //TODO: add a method that runs if the Promise fails
 
+// pokemonPromise.catch(error => console.log(error));
+
 //TODO: In the callback function of the .then method, parse the response into JSON
+
+// let pokeSon = pokemonPromise.then(response => {return response.json()});
+// console.log(pokeSon);
 
 /*********************************************
  *              CHAINING PROMISES
@@ -22,6 +31,11 @@ var pokemonPromise = fetch('https://pokeapi.co/api/v2/pokemon');
 //  the first returned response.
 //    Taking a look at this second return, what are the results? What is the shape of our data?
 
+// pokemonPromise.then(response => response.json())
+//     .then(jsonResponse => jsonResponse.results)
+//     .then(pokemonArr => pokemonArr.forEach(pokemon => console.log(pokemon.name)))
+//     .catch(error => console.log(error))
+
 // TODO: Finally, chain another .then method that would log all of the name properties of the
 //  returned pokemon.
 // BONUS: Is there a way for us to clean up our code?
@@ -30,7 +44,14 @@ var pokemonPromise = fetch('https://pokeapi.co/api/v2/pokemon');
 
 // TODO: Using Promises, make a fetch request to the Star Wars API
 
+const starWarsAPI = fetch("https://swapi.dev/api/films")
+
 // TODO: Use Promise chaining to console log the json response
+
+starWarsAPI.then(response => response.json())
+    .then(jsonResponse => jsonResponse.results)
+    .then(resultsArray => resultsArray.forEach(film => console.log(film.title + " " + film.episode_id)))
+    .catch(error => console.log(error))
 
 // TODO: chain another method that iterates through the results array and console logs the names
 //  of all characters and their birth_years
