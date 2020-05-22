@@ -43,11 +43,28 @@
 
     let emails = users.map((e) => e.email);
 
-    let totalYearsExp = users.reduce((years, exp) => {return years + exp.yearsOfExperience}, 0);
+    let totalYearsExp = users.reduce((acc, cur) => {return acc + cur.yearsOfExperience}, 0);
+
+    let avgYearsExp = totalYearsExp / users.length;
 
     let longestEmail = users.reduce((acc, cur) => {
         return acc.length > cur.email.length ? acc : cur.email;
-    }, '')
+    }, '');
 
-    let nameStr = users.reduce((acc, cur) => `${acc}${cur.name}, `, 'Your instructors are: ')
+    let nameStr = users.reduce((acc, cur, index) => {
+        if (index < users.length - 1) {
+             return `${acc}${cur.name.substring(0, 1).toUpperCase()}${cur.name.substring(1, cur.name.length).toLowerCase()}, `
+        } else {
+            return `${acc}${cur.name.substring(0, 1).toUpperCase()}${cur.name.substring(1, cur.name.length).toLowerCase()}.`
+        }
+    }, 'Your instructors are: ');
+
+    let uniqueLangs = users.reduce((acc, cur) => {
+        for (let lang of cur.languages) {
+            if (!acc.includes(lang)) {
+                acc.push(lang)
+            }
+        }
+        return acc;
+    }, [])
 })();
